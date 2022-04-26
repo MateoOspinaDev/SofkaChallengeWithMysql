@@ -1,0 +1,17 @@
+Java Database Controller (JDBC) es una API que implementa un conjunto de interfaces, las que permiten a una aplicación java
+interactuar con una base de datos, como por ejemplo abrir una conexión, enviar comandos SQL y recibir información devuelta
+desde la base de datos.
+
+
+jdbc:mysql://host:port/database?user=name_user&password=secret_password
+
+En donde:
+
+host: es la IP donde está la base de datos MySQL, si está en nuestra misma máquina será localhost.
+port: es el puerto por donde escucha el servidor de base de datos, por defecto para MySQL es el 3306.
+database: es el nombre de la base de datos a la cual nos queremos conectar.
+user: es el usuario de la base de datos
+password: es la clave con que el usuario puede ingresar a la base de datos.
+
+El método getConnection() es un método estático de la clase DriverManager por esa razón es que se accede sin crear un objeto,
+esta clase está disponible dentro del paquete java.sql, el cual debes importar para que no te de error.
