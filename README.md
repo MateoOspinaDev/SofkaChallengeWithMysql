@@ -1,14 +1,14 @@
 # Sofka Challenge
 ### CONCURSO DE PREGUNTAS Y RESPUESTAS
 
-El proyecto es el desarrollo del challenge de Sofka U para ingresar a la training league de desarrollo de software.
+El proyecto es el desarrollo del challenge de Sofka U para ingresar al training league de desarrollo de software.
 ### Pasos para su ejecución
 
 - Descargar el proyecto completo desde este repositorio como lo muestra la imagen:
  ![image](https://user-images.githubusercontent.com/98233607/165594775-796d7bce-b2f5-4c2a-a129-031b7c3e50d9.png)
 - Como el proyecto se ejecuta por consola, debe abrirlo con un entorno desarrollo (preferiblemente IntelliJ IDEA).
 - Importar y ejecutar el archivo "puntaje.sql" en un gestor de bases de datos como MySQL Workbench o phpMyAdmin.
-- Modificar el archivo "config.properties con los datos de su entorno de ejecución. (Si ejecuta lo anterior sin hacer modificaciones, la propiedad "dbName" no deberá ser modificada)
+- Modificar el archivo "config.properties con los datos de su entorno de ejecución. 
 - Ejectutar el metodo main del proyecto.
 > Nota: Si no se realiza la correcta creación y conexión a la base de datos, la lógica del programa se ejectutará, pero el puntaje, lógicamente,  no se guardará .  
 
@@ -25,7 +25,7 @@ El proyecto es el desarrollo del challenge de Sofka U para ingresar a la trainin
 | Informática básica | 4 |
 | Programación básica | 5 |
 
-**2) Iniciar el juego**: El juego se inicia cuando el programa se ejecuta. El usuario tiene la opci+on d eempezar a juar o ver el historico de los resultados. Si elije jugar, el programa escogerá una pregunta aleatoria de la categoría del primer nivel.
+**2) Iniciar el juego**: El juego se inicia cuando el programa se ejecuta. El usuario tiene la opción d eempezar a juar o ver el historico de los resultados. Si elije jugar, el programa escogerá una pregunta aleatoria de la categoría del primer nivel.
 
 **3) Responder a la pregunta**: El usuario puede elegir la respuesta entre 5 opciones disponibles para cada pregunta.
 
@@ -37,6 +37,6 @@ El proyecto es el desarrollo del challenge de Sofka U para ingresar a la trainin
 
 **7) Fin del juego forzado**: si el usuario responde una pregunta de forma incorrecta, su puntaje será cero y el programa terminará.
 
-**8) Persistencia de datos**:En el caso en que el usuario finalice exitosamente todo el juego, se retire antes de terminar o responda de forma incorrecta se realizará la persistencia de sus atos con el puntaje correspondiente.
+**8) Persistencia de datos**:En el caso en que el usuario finalice exitosamente todo el juego, se retire antes de terminar o responda de forma incorrecta se realizará la persistencia de sus datos con el puntaje correspondiente.
 
 
