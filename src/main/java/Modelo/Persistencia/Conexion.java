@@ -1,16 +1,35 @@
 package Modelo.Persistencia;
 
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Properties;
 
 public class Conexion {
-    public static Connection connect() {
-        Connection con = null;//objeto del tipo Connection, para administrar la conexión
 
-        String password = "";
-        String usuario = "root";
-        String url = "jdbc:mysql://localhost:3306/puntaje?user=" + usuario
+    public static HashMap<String,String> getProperties() throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileReader("config.properties"));
+        HashMap<String, String> allProperties = new HashMap<>();
+        allProperties.put("host",properties.getProperty("host"));
+        allProperties.put("port",properties.getProperty("port"));
+        allProperties.put("password",properties.getProperty("password"));
+        allProperties.put("user",properties.getProperty("user"));
+        allProperties.put("dbName",properties.getProperty("dbName"));
+        return  allProperties;
+    }
+
+    public static Connection connect() throws IOException {
+        Connection con = null;//objeto del tipo Connection, para administrar la conexión
+        HashMap <String,String> properties = getProperties();
+        String host = properties.get("host");
+        String port = properties.get("port");
+        String password = properties.get("password");
+        String user = properties.get("user");
+        String dbName = properties.get("dbName");
+        String url = "jdbc:mysql://"+host+":"+port+"/"+dbName+"?user=" + user
                 + "&password=" + password;
 
         try {

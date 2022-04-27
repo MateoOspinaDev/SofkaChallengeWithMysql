@@ -31,7 +31,7 @@ public class UIConcursoMethods {
      static void playConcurse(){
         Scanner sc = new Scanner(System.in);
         String nombre = Validacion.validateName("Ingrese su nombre por favor: ");
-        Long puntaje = 0L;
+        long puntaje = 0L;
         boolean flag = true;
         Concurso concurso = new Concurso(Preguntas.unirCategorias(),"Concurso de preguntas de Sofka");
         List<Categoria> categorias = concurso.getCategorias();
@@ -45,8 +45,9 @@ public class UIConcursoMethods {
                 pregunta.getOpciones().forEach((s, opcion) -> System.out.println(s+") "+opcion.getContenido()));
                 String response = Validacion.validateOption("¿Cuál es la respuesta?");
                 if (!pregunta.getOpciones().get(response).getContenido().equals(pregunta.getRespuestaCorrecta().getContenido())){
+                    puntaje = 0L;
                     flag = false;
-                    System.out.println("Respuesta incorrecta, su puntaje fue de: "+puntaje);
+                    System.out.println("Respuesta incorrecta, por lo tanto su puntaje es de: "+puntaje);
                     break;
                 }
                 puntaje++;

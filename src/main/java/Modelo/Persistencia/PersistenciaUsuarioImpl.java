@@ -2,6 +2,7 @@ package Modelo.Persistencia;
 
 import Modelo.Clases.Usuario;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class PersistenciaUsuarioImpl implements IPersistenciaUsuario {
             stm.close();//cerramos el metodo
             con.close();//cerramos el metodo*/
 
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             System.out.println("Error: Clase UsuarioDaoImpl, método registrar");
             e.printStackTrace();
         }
@@ -75,7 +76,7 @@ public class PersistenciaUsuarioImpl implements IPersistenciaUsuario {
             stm.close();
             rs.close();
             co.close();
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             System.out.println("Error: Clase ClienteDaoImple, método obtener");
             e.printStackTrace();
         }
