@@ -25,7 +25,7 @@ El proyecto es el desarrollo del challenge de Sofka U para ingresar al training 
 | Informática básica | 4 |
 | Programación básica | 5 |
 
-**2) Iniciar el juego**: El juego se inicia cuando el programa se ejecuta. El usuario tiene la opción d eempezar a juar o ver el historico de los resultados. Si elije jugar, el programa escogerá una pregunta aleatoria de la categoría del primer nivel.
+**2) Iniciar el juego**: El juego se inicia cuando el programa se ejecuta. El usuario tiene la opción de empezar a jugar o ver el histórico de los resultados. Si elije jugar, el programa escogerá una pregunta aleatoria de la categoría del primer nivel.
 
 **3) Responder a la pregunta**: El usuario puede elegir la respuesta entre 5 opciones disponibles para cada pregunta.
 
