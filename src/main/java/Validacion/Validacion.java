@@ -36,6 +36,21 @@ public class Validacion {
         return opcion;
     }
 
+    public static String validateContinuity(String frase){
+        sc=new Scanner(System.in);
+        String opcion= "";
+        do {
+            System.out.println(frase);
+            opcion = sc.nextLine();
+            if (!opcion.matches("[1-2]")) {
+                opcion = "";
+                System.out.println("Ingrese solo un de las opciones que puede escoger (1 o 2)");
+            }
+        }
+        while (opcion.equals(""));
+        return opcion;
+    }
+
 
 
 }

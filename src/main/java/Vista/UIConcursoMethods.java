@@ -12,6 +12,7 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class UIConcursoMethods {
@@ -29,7 +30,6 @@ public class UIConcursoMethods {
     }
 
      static void playConcurse(){
-        Scanner sc = new Scanner(System.in);
         String nombre = Validacion.validateName("Ingrese su nombre por favor: ");
         long puntaje = 0L;
         boolean flag = true;
@@ -38,20 +38,28 @@ public class UIConcursoMethods {
         while (flag) {
             for (Categoria categoria:categorias) {
                 if (!flag){break;}
-                int numeroAleatorio = (int) (Math.random() * 4 + 0);
                 System.out.println("Esta categoría es de " + categoria.getNombre() + " (nivel: " + categoria.getNivel() + ")");
-                Pregunta pregunta = categoria.getPreguntas().get(numeroAleatorio);
+                Pregunta pregunta = categoria.getPreguntas().get((int)(Math.random() * 4 + 0));
                 System.out.println(pregunta.getEnunciado());
                 pregunta.getOpciones().forEach((s, opcion) -> System.out.println(s+") "+opcion.getContenido()));
-                String response = Validacion.validateOption("¿Cuál es la respuesta?");
-                if (!pregunta.getOpciones().get(response).getContenido().equals(pregunta.getRespuestaCorrecta().getContenido())){
-                    puntaje = 0L;
-                    flag = false;
-                    System.out.println("Respuesta incorrecta, por lo tanto su puntaje es de: "+puntaje);
-                    break;
+                String continuidad = Validacion.validateContinuity("De momento su puntaje es:"+puntaje+" ¿Desea continuar o desea retirarse y conservar el puntaje actual?\n" + "Escriba 1 para continuar y 2 para terminar el juego");
+                if(continuidad.equals("2")){ flag = false;
+                    System.out.println("Juego terminado. Su puntaje fue de "+puntaje);
                 }
-                puntaje++;
-                if(categoria.getNivel()==5){flag=false;}
+                else {
+                    String response = Validacion.validateOption("¿Cuál es la respuesta de la pregunta?");
+                    if (!pregunta.getOpciones().get(response).getContenido().equals(pregunta.getRespuestaCorrecta().getContenido())) {
+                        puntaje = 0L;
+                        flag = false;
+                        System.out.println("Respuesta incorrecta, por lo tanto su puntaje es de: " + puntaje);
+                        break;
+                    }
+                    puntaje++;
+                    if(categoria.getNivel()==5){
+                        System.out.println("¡Felicitaciones! Ha completado la totalidad del concurso. Por lo tanto su puntaje es de: "+puntaje);
+                        flag=false;
+                    }
+                }
             }
         }
         PersistenciaUsuarioImpl dao = new PersistenciaUsuarioImpl();
