@@ -34,9 +34,6 @@ public class Conexion {
 
         try {
             con = DriverManager.getConnection(url);
-            //El método getConnection() es un método estático de la clase DriverManager por esa razón es que se accede sin
-            // crear un objeto, esta clase está disponible dentro del paquete java.sql, el cual debes importar para que no
-            // te de error.
             if (con != null) {
                 System.out.println("Conectado");
             }

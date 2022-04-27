@@ -95,7 +95,7 @@ public class PersistenciaUsuarioImpl implements IPersistenciaUsuario {
 
         try {
             ResultSet result = stm.executeQuery(query);
-            if (rs.next()) { //Para leer varias posibles filas se cambia el while por el if
+            if (rs.next()) {
                 usuario.setId(rs.getInt(1));
                 usuario.setNombre(rs.getString(2));
                 usuario.setPuntaje((long) rs.getInt(3));
@@ -114,46 +114,4 @@ public class PersistenciaUsuarioImpl implements IPersistenciaUsuario {
         return usuario;
     }
 
-
-
-
-//    @Override
-//    public boolean actualizar(Usuario usuario) {
-//        Connection connect= null;
-//        Statement stm= null;
-//
-//        boolean actualizar=false;
-//
-//        String sql="UPDATE CLIENTE SET cedula='"+cliente.getCedula()+"', nombres='"+cliente.getNombre()+"', apellidos='"+cliente.getApellido()+"'" +" WHERE ID="+cliente.getId();
-//        try {
-//            connect=Conexion.conectar();
-//            stm=connect.createStatement();
-//            stm.execute(sql);
-//            actualizar=true;
-//        } catch (SQLException e) {
-//            System.out.println("Error: Clase ClienteDaoImple, método actualizar");
-//            e.printStackTrace();
-//        }
-//        return actualizar;
-//    }
-
-//    @Override
-//    public boolean eliminar(Usuario usuario) {
-//        Connection connect= null;
-//        Statement stm= null;
-//
-//        boolean eliminar=false;
-//
-//        String sql="DELETE FROM CLIENTE WHERE ID="+cliente.getId();
-//        try {
-//            connect=Conexion.conectar();
-//            stm=connect.createStatement();
-//            stm.execute(sql);
-//            eliminar=true;
-//        } catch (SQLException e) {
-//            System.out.println("Error: Clase ClienteDaoImple, método eliminar");
-//            e.printStackTrace();
-//        }
-//        return eliminar;
-//    }
 }
