@@ -1,4 +1,11 @@
-
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 28, 2022 at 04:06 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,13 +40,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `puntaje`, `fecha`, `hora`) VALUES
-(1, 'Mateo', 2, '2022-01-23', '00:00:00'),
-(2, 'Santiago', 2, '2022-03-11', '21:12:06'),
-(3, 'Adriana', 3, '2022-03-12', '09:56:48'),
-(4, 'Lucia', 0, '2022-04-21', '10:08:28'),
-(5, 'Issa', 3, '2022-04-21', '10:24:32'),
-(6, 'PoPi', 0, '2022-04-23', '10:44:38'),
-(7, 'Luci', 0, '2022-04-23', '10:53:47');
+(8, 'David', 5, '2022-04-27', '09:24:02'),
+(9, 'Frank', 5, '2022-04-27', '09:26:18'),
+(10, 'Rene', 2, '2022-04-27', '09:27:31');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +62,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
