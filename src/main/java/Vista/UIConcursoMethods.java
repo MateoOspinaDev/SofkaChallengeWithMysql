@@ -26,7 +26,7 @@ public class UIConcursoMethods {
         System.out.println("El concurso tiene la siguiente lógica:");
         System.out.println("Deberá responder cada pregunta escribiendo la opción a,b,c,d o e dependiendo la respuesta que considere correcta");
         System.out.println("Si la respuesta es correcta, obtendrá 1 punto y avanzará a la siguiente ronda");
-        System.out.println("Si es incorrecta o ingresa un valor diferente perderá el concurso.");
+        System.out.println("Si es incorrecta perderá el concurso.");
     }
 
      static void playConcurse(){
